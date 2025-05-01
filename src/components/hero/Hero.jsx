@@ -28,22 +28,22 @@ const Hero = () => {
             <div className="grid grid-cols-4 grayscale opacity-50 gap-8 items-center">
               <div className="text-center">
                 <div className="h-24 w-24 flex items-center justify-center mx-auto">
-                  <Image src="/reliance.png" alt="Reliance" width={100} height={100} />
+                  <Image src="/Starbucks.jpg" alt="Starbucks" width={100} height={100} />
                 </div>
               </div>
               <div className="text-center">
                 <div className="h-24 w-24 flex items-center justify-center mx-auto">
-                  <Image src="/tata.png" alt="Tata" width={100} height={100} />
+                  <Image src="/l&T.jpg" alt="L&T" width={100} height={100} />
                 </div>
               </div>
               <div className="text-center">
                 <div className="h-24 w-24 flex items-center justify-center mx-auto">
-                  <Image src="/adani.png" alt="Adani" width={100} height={100} />
+                  <Image src="/Jsw.png" alt="Jsw" width={100} height={100} />
                 </div>
               </div>
               <div className="text-center">
                 <div className="h-24 w-24 flex items-center justify-center mx-auto">
-                  <Image src="/Jsw.png" alt="JSw" width={100} height={100} />
+                  <Image src="/SCHINDLER.png" alt="Schindler" width={100} height={100} />
                 </div>
               </div>
             </div>
