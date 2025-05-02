@@ -12,7 +12,7 @@ const Hero = () => {
               Enterprise AI, from problem to solution
             </h1>
             <p className="text-lg text-gray-500 mb-8">
-              We partner with India's largest organizations to design and deploy custom AI solutions that deliver results—fast.
+              We partner with India's largest organizations to design and deploy custom AI solutions that deliver results fast.
             </p>
             <div>
               <Link 

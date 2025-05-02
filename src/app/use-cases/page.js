@@ -26,7 +26,7 @@ export default function UseCasesPage() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen max-w-7xl w-full mx-auto flex flex-col">
       <Navbar />
       
       <main className="flex-grow">

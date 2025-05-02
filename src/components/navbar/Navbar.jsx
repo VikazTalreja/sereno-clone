@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="flex items-center space-x-2">
         <Link href="/" className="flex items-center">
           <span className="text-2xl font-bold text-[#0f253c]" style={{ fontFamily: 'Satoshi, sans-serif' }}>sereno</span>
-          <div className="h-1 w-16 bg-[#0f253c] mt-1 ml-1"></div>
+          
         </Link>
       </div>
 
@@ -29,13 +29,7 @@ const Navbar = () => {
         >
           Solutions
         </Link>
-        <Link 
-          href="/use-cases" 
-          className="px-4 py-2 border border-[#0f253c] text-[#0f253c] rounded-md hover:bg-[#0f253c]/5 transition-colors"
-          style={{ fontFamily: 'Satoshi, sans-serif', fontWeight: 500 }}
-        >
-          Explore Use Cases
-        </Link>
+        
         <Link 
           href="/about" 
           className="text-gray-700 hover:text-black transition-colors" 
