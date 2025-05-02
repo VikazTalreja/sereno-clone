@@ -24,26 +24,26 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="flex flex-col md:hidden justify-center items-center">
-            <div className="grid grid-cols-4 grayscale opacity-50 gap-8 items-center">
+          <div className="flex flex-col justify-center items-center">
+            <div className="grid md:grid-cols-4 grid-cols-2  opacity-50 gap-8 items-center">
               <div className="text-center">
-                <div className="h-24 w-24 flex items-center justify-center mx-auto">
-                  <Image src="/Starbucks.jpg" alt="Starbucks" width={100} height={100} />
+                <div className="h-24 w-24 cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                  <Image src="/starbucks.png" alt="Starbucks" width={100} height={100} />
                 </div>
               </div>
               <div className="text-center">
-                <div className="h-24 w-24 flex items-center justify-center mx-auto">
-                  <Image src="/l&T.jpg" alt="L&T" width={100} height={100} />
+                <div className="h-16 w-16 cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                  <Image src="/l&T.png" alt="L&T" width={100} height={100} />
                 </div>
               </div>
               <div className="text-center">
-                <div className="h-24 w-24 flex items-center justify-center mx-auto">
-                  <Image src="/Jsw.png" alt="Jsw" width={100} height={100} />
+                <div className="h-32 w-32 cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                  <Image src="/Jsw.png" alt="Jsw" width={150} height={150} />
                 </div>
               </div>
               <div className="text-center">
-                <div className="h-24 w-24 flex items-center justify-center mx-auto">
-                  <Image src="/SCHINDLER.png" alt="Schindler" width={100} height={100} />
+                <div className="md:h-44 md:w-44 cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                  <Image src="/Schindler.png" alt="Schindler" width={200} height={200} />
                 </div>
               </div>
             </div>

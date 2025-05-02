@@ -16,18 +16,25 @@ const Navbar = () => {
       <div className="flex items-center space-x-2">
         <Link href="/" className="flex items-center">
           <span className="text-2xl font-bold text-[#0f253c]" style={{ fontFamily: 'Satoshi, sans-serif' }}>sereno</span>
-          <div className="h-1 w-16 bg-sereno-green mt-1 ml-1"></div>
+          <div className="h-1 w-16 bg-[#0f253c] mt-1 ml-1"></div>
         </Link>
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex items-center space-x-10">
+      <div className="hidden md:flex items-center space-x-8">
         <Link 
           href="/solutions" 
           className="text-gray-700 hover:text-black transition-colors" 
           style={{ fontFamily: 'Satoshi, sans-serif', fontWeight: 500 }}
         >
           Solutions
+        </Link>
+        <Link 
+          href="/use-cases" 
+          className="px-4 py-2 border border-[#0f253c] text-[#0f253c] rounded-md hover:bg-[#0f253c]/5 transition-colors"
+          style={{ fontFamily: 'Satoshi, sans-serif', fontWeight: 500 }}
+        >
+          Explore Use Cases
         </Link>
         <Link 
           href="/about" 
@@ -82,6 +89,13 @@ const Navbar = () => {
               Solutions
             </Link>
             <Link 
+              href="/use-cases" 
+              className="text-gray-700 hover:text-black transition-colors"
+              style={{ fontFamily: 'Satoshi, sans-serif', fontWeight: 500 }}
+            >
+              Explore Use Cases
+            </Link>
+            <Link 
               href="/about" 
               className="text-gray-700 hover:text-black transition-colors"
               style={{ fontFamily: 'Satoshi, sans-serif', fontWeight: 500 }}
@@ -97,7 +111,7 @@ const Navbar = () => {
             </Link>
             <Link 
               href="/contact" 
-              className="px-4 py-2 bg-gray-900 text-white rounded hover:bg-opacity-90 transition-colors w-full text-center"
+              className="px-4 py-2 bg-[#0f253c] text-white rounded hover:bg-opacity-90 transition-colors w-full text-center"
               style={{ fontFamily: 'Satoshi, sans-serif', fontWeight: 600 }}
             >
               Let's Talk
