@@ -39,13 +39,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link 
-            href="/solutions" 
-            className="text-gray-700 hover:text-black transition-colors" 
-            style={{ fontFamily: 'Satoshi, sans-serif', fontWeight: 500 }}
-          >
-            Solutions
-          </Link>
+     
           
           <Link 
             href="/about" 
