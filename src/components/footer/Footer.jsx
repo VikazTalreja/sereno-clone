@@ -4,7 +4,7 @@ import { useCases } from '@/data/useCases';
 
 const Footer = () => {
   const uniqueuseCases = [...new Set(useCases.map(useCase => useCase.industry))];
-  console.log(uniqueuseCases);
+
   return (
     <footer className="bg-gray-100 py-12 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
@@ -38,24 +38,14 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">Resources</h3>
+            <h3 className="font-bold text-lg mb-4">Policies</h3>
             <ul className="space-y-2">
-              <li><Link href="/blog" className="text-gray-600 hover:text-black transition">Blog</Link></li>
-              <li><Link href="/case-studies" className="text-gray-600 hover:text-black transition">Case Studies</Link></li>
-              <li><Link href="/whitepapers" className="text-gray-600 hover:text-black transition">Whitepapers</Link></li>
+              <li><Link href="/privacy-policy" className="text-gray-600 hover:text-black transition">Privacy Policy</Link></li>
+              <li><Link href="/terms-of-service" className="text-gray-600 hover:text-black transition">Terms of Service</Link></li>
             </ul>
-          </div>
+          </div>  
         </div>
         
-        <div className="mt-12 pt-4 border-t border-gray-200">
-          <div className="flex flex-col md:flex-row md:justify-between">
-            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Sereno AI. All rights reserved.</p>
-            <div className="flex space-x-4 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-500 text-sm hover:text-black transition">Privacy Policy</Link>
-              <Link href="/terms" className="text-gray-500 text-sm hover:text-black transition">Terms of Service</Link>
-            </div>
-          </div>
-        </div>
       </div>
     </footer>
   );

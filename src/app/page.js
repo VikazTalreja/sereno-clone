@@ -4,6 +4,7 @@ import Features from '../components/features/Features';
 import Blog from '../components/blog/Blog';
 import CTA from '../components/cta/CTA';
 import Footer from '../components/footer/Footer';
+import CapabilitiesStack from '../components/home/CapabilitiesStack';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <main>
         <Hero />
         <Features />
+        <CapabilitiesStack />
         <Blog />
         <CTA />
       </main>

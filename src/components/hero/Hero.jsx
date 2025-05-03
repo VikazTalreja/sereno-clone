@@ -43,7 +43,7 @@ const Hero = () => {
               </div>
               <div className="text-center">
                 <div className="md:h-40 md:w-40 rounded-full object-cover  cursor-pointer hover:grayscale-0 grayscale  hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
-                  <Image src="/Schindler.png" alt="Schindler" width={500} height={400} className='object-cover h-full' />
+                  <Image src="/sch2.png" alt="Schindler" width={500} height={400} className='object-cover h-full' />
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@ const Hero = () => {
               </div>
               <div className="text-center">
                 <div className="h-28  w-28 rounded-full  cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
-                  <Image src="/Schindler.png" alt="Schindler" width={500} height={400} className='object-cover h-full' />
+                  <Image src="/sch2.png" alt="Schindler" width={500} height={400} className='object-cover h-full' />
                 </div>
               </div>
             </div>
