@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ContactButton from '../cta/ContactButton';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -119,13 +120,12 @@ const Navbar = () => {
               >
                 Blog
               </Link>
-              <Link 
-                href="/contact" 
-                className="px-4 py-2 bg-[#0f253c] text-white rounded hover:bg-opacity-90 transition-colors w-full text-center"
-                style={{ fontFamily: 'Satoshi, sans-serif', fontWeight: 600 }}
-              >
-                Let's Talk
-              </Link>
+             <ContactButton
+             className='px-4 py-2 bg-[#0f253c] text-sm text-white rounded-md transition-colors'
+             style={{ fontFamily: 'Satoshi, sans-serif', fontWeight: 400 }}
+             >
+              Let's Talk
+             </ContactButton>
             </div>
           </div>
         )}

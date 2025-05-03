@@ -42,7 +42,7 @@ const Hero = () => {
                 </div>
               </div>
               <div className="text-center">
-                <div className="md:h-44 md:w-44 rounded-full object-cover  cursor-pointer hover:grayscale-0 grayscale  hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                <div className="md:h-40 md:w-40 rounded-full object-cover  cursor-pointer hover:grayscale-0 grayscale  hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
                   <Image src="/Schindler.png" alt="Schindler" width={500} height={400} className='object-cover h-full' />
                 </div>
               </div>
@@ -56,21 +56,21 @@ const Hero = () => {
             <div className="grid grid-cols-4 opacity-50 gap-3 items-center">
               <div className="text-center">
                 <div className="h-20 w-20 cursor-pointer hover:grayscale-0 grayscale  hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
-                  <Image src="/starbucks.png" alt="Starbucks" width={100} height={100} />
+                  <Image src="/starbucks.png" alt="Starbucks" width={100} height={100} className='object-cover h-full' />
                 </div>
               </div>
               <div className="text-center">
-                <div className="h-16 w-16  cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                <div className="h-14 w-14  cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
                   <Image src="/l&T.png" alt="L&T" width={100} height={100} />
                 </div>
               </div>
               <div className="text-center">
-                <div className="h-20 w-20  object-center cursor-pointer rounded-full hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                <div className="h-24 w-24  object-center cursor-pointer rounded-full hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                   <Image src="/Jsw.png" alt="Jsw" width={200} height={200} className='object-cover h-full' />
                 </div>
               </div>
               <div className="text-center">
-                <div className="h-20  w-20 rounded-full  cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                <div className="h-28  w-28 rounded-full  cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
                   <Image src="/Schindler.png" alt="Schindler" width={500} height={400} className='object-cover h-full' />
                 </div>
               </div>
