@@ -9,6 +9,7 @@ const CapabilitiesStack = () => {
   const navWrapperRef = useRef(null);
   const containerRef = useRef(null);
   const [navHeight, setNavHeight] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const capabilities = [
     {
@@ -33,8 +34,26 @@ const CapabilitiesStack = () => {
     },
   ];
 
+  // Check if viewport is mobile
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkIfMobile();
+    
+    // Add event listener
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
   // Initialize intersection observer to detect which section is in view
   useEffect(() => {
+    if (isMobile) return; // Don't use intersection observer on mobile
+    
     const options = {
       root: null,
       rootMargin: '0px',
@@ -64,11 +83,11 @@ const CapabilitiesStack = () => {
         observer.disconnect();
       }
     };
-  }, []);
+  }, [isMobile]);
 
   // Calculate and store nav height on mount and window resize
   useEffect(() => {
-    if (!stickyNavRef.current) return;
+    if (!stickyNavRef.current || isMobile) return;
     
     const updateNavHeight = () => {
       if (stickyNavRef.current) {
@@ -85,11 +104,11 @@ const CapabilitiesStack = () => {
     return () => {
       window.removeEventListener('resize', updateNavHeight);
     };
-  }, []);
+  }, [isMobile]);
 
-  // Simple and reliable sticky implementation
+  // Simple and reliable sticky implementation - only for desktop
   useEffect(() => {
-    if (!navWrapperRef.current || !containerRef.current || !stickyNavRef.current) return;
+    if (!navWrapperRef.current || !containerRef.current || !stickyNavRef.current || isMobile) return;
 
     const navWrapper = navWrapperRef.current;
     const container = containerRef.current;
@@ -100,6 +119,14 @@ const CapabilitiesStack = () => {
     if (!lastSection) return;
     
     const handleScroll = () => {
+      // Check if we're on mobile - if so, don't do sticky
+      if (window.innerWidth < 768) {
+        nav.style.position = 'static';
+        nav.style.width = '100%';
+        navWrapper.style.height = 'auto';
+        return;
+      }
+      
       // Get container position
       const containerRect = container.getBoundingClientRect();
       // Get last section position to determine when to stop being sticky
@@ -141,7 +168,7 @@ const CapabilitiesStack = () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
     };
-  }, [navHeight]);
+  }, [navHeight, isMobile]);
 
   // Scroll to section when clicking on a navigation item
   const scrollToSection = (index) => {
@@ -171,9 +198,9 @@ const CapabilitiesStack = () => {
         </div>
 
         <div ref={containerRef} className="grid grid-cols-1 lg:grid-cols-5 gap-6 max-w-6xl mx-auto relative">
-          {/* Left side: Capability Selector */}
+          {/* Left side: Capability Selector - sticky on desktop only */}
           <div className="lg:col-span-2 lg:pr-8" ref={navWrapperRef}>
-            <div ref={stickyNavRef} className="w-full">
+            <div ref={stickyNavRef} className={`w-full ${isMobile ? '' : 'sticky-nav'}`}>
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div className="divide-y divide-gray-100">
                   {capabilities.map((capability, index) => (
