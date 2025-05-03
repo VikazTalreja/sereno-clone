@@ -33,7 +33,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <Link href="/" className="flex items-center">
-            <span className="text-5xl md:text-4xl font-bold text-[#0f253c]" style={{ fontFamily: 'Satoshi, sans-serif' }}>sereno</span>
+            <span className="text-3xl md:text-4xl font-bold text-[#0f253c]" style={{ fontFamily: 'Satoshi, sans-serif' }}>sereno</span>
           </Link>
         </div>
 

@@ -49,8 +49,6 @@ const Hero = () => {
             </div>
           </div>
 
-
-
           {/* mobile logo section */}
           <div className="flex md:hidden flex-col justify-center items-center">
             <div className="grid grid-cols-4 opacity-50 gap-3 items-center">
