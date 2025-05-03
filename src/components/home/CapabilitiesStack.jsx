@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 
 const CapabilitiesStack = () => {
   const [activeCapability, setActiveCapability] = useState(0);
@@ -16,21 +17,61 @@ const CapabilitiesStack = () => {
       id: 0,
       title: "Problem Discovery & Use Case Design",
       description: "We collaborate with your team to identify high-impact AI use cases and design solutions that address your specific business challenges.",
+      schema: {
+        "@type": "Service",
+        "name": "AI Problem Discovery & Use Case Design",
+        "description": "We collaborate with your team to identify high-impact AI use cases and design solutions that address your specific business challenges.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Sereno AI"
+        },
+        "serviceType": "AI Consulting"
+      }
     },
     {
       id: 1,
       title: "LLM & Vision AI Engineering",
       description: "Our team develops custom AI models using the latest large language models and computer vision technologies tailored to your industry-specific needs.",
+      schema: {
+        "@type": "Service",
+        "name": "LLM & Vision AI Engineering",
+        "description": "Our team develops custom AI models using the latest large language models and computer vision technologies tailored to your industry-specific needs.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Sereno AI"
+        },
+        "serviceType": "AI Development"
+      }
     },
     {
       id: 2,
       title: "Cloud + On-Prem GPU Infrastructure Integration",
       description: "We seamlessly integrate AI solutions with your existing infrastructure, whether cloud-based or on-premises, optimizing for performance and cost.",
+      schema: {
+        "@type": "Service",
+        "name": "Cloud + On-Prem GPU Infrastructure Integration",
+        "description": "We seamlessly integrate AI solutions with your existing infrastructure, whether cloud-based or on-premises, optimizing for performance and cost.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Sereno AI"
+        },
+        "serviceType": "Infrastructure Integration"
+      }
     },
     {
       id: 3,
       title: "Enterprise-Grade Deployment & Support",
       description: "We provide comprehensive deployment services including security reviews, performance tuning, and ongoing support to ensure your AI solutions deliver continuous value.",
+      schema: {
+        "@type": "Service",
+        "name": "Enterprise-Grade Deployment & Support",
+        "description": "We provide comprehensive deployment services including security reviews, performance tuning, and ongoing support to ensure your AI solutions deliver continuous value.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Sereno AI"
+        },
+        "serviceType": "AI Support & Maintenance"
+      }
     },
   ];
 
@@ -185,117 +226,144 @@ const CapabilitiesStack = () => {
     }
   };
 
-  return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-50 relative">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0f253c] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>
-            Capabilities Stack
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Our end-to-end enterprise AI capabilities deliver results from initial concept to full-scale deployment
-          </p>
-        </div>
+  // Generate schema markup for services
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": capabilities.map((capability, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": capability.schema
+    }))
+  };
 
-        <div ref={containerRef} className="grid grid-cols-1 lg:grid-cols-5 gap-6 max-w-6xl mx-auto relative">
-          {/* Left side: Capability Selector - sticky on desktop only */}
-          <div className="lg:col-span-2 lg:pr-8" ref={navWrapperRef}>
-            <div ref={stickyNavRef} className={`w-full ${isMobile ? '' : 'sticky-nav'}`}>
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <div className="divide-y divide-gray-100">
-                  {capabilities.map((capability, index) => (
-                    <div 
-                      key={capability.id}
-                      className={`p-4 cursor-pointer transition-all duration-300 ${activeCapability === index ? 'bg-[#0f253c] text-white' : 'hover:bg-gray-50'}`}
-                      onClick={() => scrollToSection(index)}
-                    >
-                      <div className="flex items-center">
-                        <div>
-                          <h3 className={`font-bold ${activeCapability === index ? 'text-white' : 'text-[#0f253c]'}`}>
-                            {capability.title}
-                          </h3>
+  return (
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+        />
+      </Head>
+      <section 
+        className="py-20 bg-gradient-to-br from-gray-50 to-gray-50 relative"
+        aria-labelledby="capabilities-heading"
+      >
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="text-center mb-16">
+            <h2 
+              id="capabilities-heading" 
+              className="text-3xl md:text-4xl font-bold text-[#0f253c] mb-4" 
+              style={{ fontFamily: 'Satoshi, sans-serif' }}
+            >
+              Capabilities Stack
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Our end-to-end enterprise AI capabilities deliver results from initial concept to full-scale deployment
+            </p>
+          </div>
+
+          <div ref={containerRef} className="grid grid-cols-1 lg:grid-cols-5 gap-6 max-w-6xl mx-auto relative">
+            {/* Left side: Capability Selector - sticky on desktop only */}
+            <div className="lg:col-span-2 lg:pr-8" ref={navWrapperRef}>
+              <div ref={stickyNavRef} className={`w-full ${isMobile ? '' : 'sticky-nav'}`}>
+                <nav className="bg-white rounded-2xl shadow-lg overflow-hidden" aria-label="Capabilities navigation">
+                  <ul className="divide-y divide-gray-100">
+                    {capabilities.map((capability, index) => (
+                      <li 
+                        key={capability.id}
+                        className={`p-4 cursor-pointer transition-all duration-300 ${activeCapability === index ? 'bg-[#0f253c] text-white' : 'hover:bg-gray-50'}`}
+                        onClick={() => scrollToSection(index)}
+                      >
+                        <div className="flex items-center">
+                          <div>
+                            <h3 className={`font-bold ${activeCapability === index ? 'text-white' : 'text-[#0f253c]'}`}>
+                              {capability.title}
+                            </h3>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
               </div>
             </div>
-          </div>
 
-          {/* Right side: Scrollable Sections */}
-          <div className="lg:col-span-3">
-            {capabilities.map((capability, index) => (
-              <div 
-                key={capability.id}
-                ref={el => sectionRefs.current[index] = el}
-                className="mb-16 bg-white rounded-2xl shadow-lg p-8 relative overflow-hidden"
-              >
-                {/* Background decoration */}
-                <div className="absolute -bottom-10 -right-10 w-64 h-64 rounded-full bg-[#0f253c]/5 z-0"></div>
-                <div className="absolute top-10 right-10 w-32 h-32 rounded-full bg-[#0f253c]/5 z-0"></div>
-                
-                <div className="relative z-1">
-                  <h3 className="text-2xl font-bold text-[#0f253c] mb-4">
-                    {capability.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6">
-                    {capability.description}
-                  </p>
+            {/* Right side: Scrollable Sections */}
+            <div className="lg:col-span-3">
+              {capabilities.map((capability, index) => (
+                <article 
+                  key={capability.id}
+                  ref={el => sectionRefs.current[index] = el}
+                  className="mb-16 bg-white rounded-2xl shadow-lg p-8 relative overflow-hidden"
+                  id={`capability-${capability.id}`}
+                >
+                  {/* Background decoration */}
+                  <div className="absolute -bottom-10 -right-10 w-64 h-64 rounded-full bg-[#0f253c]/5 z-0"></div>
+                  <div className="absolute top-10 right-10 w-32 h-32 rounded-full bg-[#0f253c]/5 z-0"></div>
                   
-                  {/* Additional content for each capability section */}
-                  <div className="mt-6">
-                    {index === 0 && (
-                      <div className="bg-gray-50 p-6 rounded-lg">
-                        <h4 className="font-bold mb-2 text-[#0f253c]">Discovery Process</h4>
-                        <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                          <li>Identify business challenges and opportunities</li>
-                          <li>Assess feasibility and potential ROI</li>
-                          <li>Design solution architecture</li>
-                        </ul>
-                      </div>
-                    )}
+                  <div className="relative z-1">
+                    <h3 className="text-2xl font-bold text-[#0f253c] mb-4">
+                      {capability.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6">
+                      {capability.description}
+                    </p>
                     
-                    {index === 1 && (
-                      <div className="bg-gray-50 p-6 rounded-lg">
-                        <h4 className="font-bold mb-2 text-[#0f253c]">AI Technologies</h4>
-                        <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                          <li>Custom LLM fine-tuning</li>
-                          <li>Computer vision and multimodal models</li>
-                          <li>RAG and knowledge graphs</li>
-                        </ul>
-                      </div>
-                    )}
-                    
-                    {index === 2 && (
-                      <div className="bg-gray-50 p-6 rounded-lg">
-                        <h4 className="font-bold mb-2 text-[#0f253c]">Infrastructure Options</h4>
-                        <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                          <li>Public cloud (AWS, Azure, GCP)</li>
-                          <li>On-premise GPU deployments</li>
-                          <li>Hybrid and multi-cloud setups</li>
-                        </ul>
-                      </div>
-                    )}
-                    
-                    {index === 3 && (
-                      <div className="bg-gray-50 p-6 rounded-lg">
-                        <h4 className="font-bold mb-2 text-[#0f253c]">Ongoing Support</h4>
-                        <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                          <li>Monitoring and performance tuning</li>
-                          <li>Model retraining and updates</li>
-                          <li>Technical support and knowledge transfer</li>
-                        </ul>
-                      </div>
-                    )}
+                    {/* Additional content for each capability section */}
+                    <div className="mt-6">
+                      {index === 0 && (
+                        <div className="bg-gray-50 p-6 rounded-lg">
+                          <h4 className="font-bold mb-2 text-[#0f253c]">Discovery Process</h4>
+                          <ul className="list-disc pl-6 text-gray-600 space-y-2">
+                            <li>Identify business challenges and opportunities</li>
+                            <li>Assess feasibility and potential ROI</li>
+                            <li>Design solution architecture</li>
+                          </ul>
+                        </div>
+                      )}
+                      
+                      {index === 1 && (
+                        <div className="bg-gray-50 p-6 rounded-lg">
+                          <h4 className="font-bold mb-2 text-[#0f253c]">AI Technologies</h4>
+                          <ul className="list-disc pl-6 text-gray-600 space-y-2">
+                            <li>Custom LLM fine-tuning</li>
+                            <li>Computer vision and multimodal models</li>
+                            <li>RAG and knowledge graphs</li>
+                          </ul>
+                        </div>
+                      )}
+                      
+                      {index === 2 && (
+                        <div className="bg-gray-50 p-6 rounded-lg">
+                          <h4 className="font-bold mb-2 text-[#0f253c]">Infrastructure Options</h4>
+                          <ul className="list-disc pl-6 text-gray-600 space-y-2">
+                            <li>Public cloud (AWS, Azure, GCP)</li>
+                            <li>On-premise GPU deployments</li>
+                            <li>Hybrid and multi-cloud setups</li>
+                          </ul>
+                        </div>
+                      )}
+                      
+                      {index === 3 && (
+                        <div className="bg-gray-50 p-6 rounded-lg">
+                          <h4 className="font-bold mb-2 text-[#0f253c]">Ongoing Support</h4>
+                          <ul className="list-disc pl-6 text-gray-600 space-y-2">
+                            <li>Monitoring and performance tuning</li>
+                            <li>Model retraining and updates</li>
+                            <li>Technical support and knowledge transfer</li>
+                          </ul>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

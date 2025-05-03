@@ -18,6 +18,7 @@ const Hero = () => {
               <Link 
                 href="/use-cases" 
                 className="px-6 py-3 bg-[#0f253c] text-white rounded-md transition-colors text-center inline-block"
+                aria-label="View our enterprise AI use cases in various industries"
               >
                 Explore Use Cases
               </Link>
@@ -25,25 +26,26 @@ const Hero = () => {
           </div>
           
           <div className="hidden md:flex flex-col justify-center items-center">
-            <div className="grid md:grid-cols-4 grid-cols-4  opacity-50 gap-8 items-center">
+            <h2 className="text-xl font-medium text-gray-600 mb-6 sr-only">Trusted by Industry Leaders</h2>
+            <div className="grid md:grid-cols-4 grid-cols-4 opacity-50 gap-8 items-center">
               <div className="text-center">
-                <div className="h-24 w-24  cursor-pointer rounded-full hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
-                  <Image src="/starbucks.png" alt="Starbucks" width={100} height={100} />
+                <div className="h-24 w-24 cursor-pointer rounded-full hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                  <Image src="/starbucks.png" alt="Starbucks - Enterprise client for retail AI solutions" width={100} height={100} />
                 </div>
               </div>
               <div className="text-center">
-                <div className="h-16 w-16 cursor-pointer hover:grayscale-0 grayscale  hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
-                  <Image src="/l&T.png" alt="L&T" width={100} height={100} />
+                <div className="h-16 w-16 cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                  <Image src="/l&T.png" alt="L&T - Engineering conglomerate using our AI infrastructure solutions" width={100} height={100} />
                 </div>
               </div>
               <div className="text-center">
-                <div className="h-32 w-28  object-center cursor-pointer rounded-full hover:grayscale-0 grayscale  hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                  <Image src="/Jsw.png" alt="Jsw" width={200} height={200} className='object-cover h-full' />
+                <div className="h-32 w-28 object-center cursor-pointer rounded-full hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                  <Image src="/Jsw.png" alt="JSW - Manufacturing leader implementing our AI vision systems" width={200} height={200} className='object-cover h-full' />
                 </div>
               </div>
               <div className="text-center">
-                <div className="md:h-40 md:w-40 rounded-full object-cover  cursor-pointer hover:grayscale-0 grayscale  hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
-                  <Image src="/sch2.png" alt="Schindler" width={500} height={400} className='object-cover h-full' />
+                <div className="md:h-40 md:w-40 rounded-full object-cover cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                  <Image src="/sch2.png" alt="Schindler - Transportation innovator using our predictive maintenance AI" width={500} height={400} className='object-cover h-full' />
                 </div>
               </div>
             </div>
@@ -51,25 +53,26 @@ const Hero = () => {
 
           {/* mobile logo section */}
           <div className="flex md:hidden flex-col justify-center items-center">
+            <h2 className="text-lg font-medium text-gray-600 mb-4 text-center">Trusted by Industry Leaders</h2>
             <div className="grid grid-cols-4 opacity-50 gap-3 items-center">
               <div className="text-center">
-                <div className="h-20 w-20 cursor-pointer hover:grayscale-0 grayscale  hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
-                  <Image src="/starbucks.png" alt="Starbucks" width={100} height={100} className='object-cover h-full' />
+                <div className="h-20 w-20 cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                  <Image src="/starbucks.png" alt="Starbucks - Enterprise client for retail AI solutions" width={100} height={100} className='object-cover h-full' />
                 </div>
               </div>
               <div className="text-center">
-                <div className="h-14 w-14  cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
-                  <Image src="/l&T.png" alt="L&T" width={100} height={100} />
+                <div className="h-14 w-14 cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                  <Image src="/l&T.png" alt="L&T - Engineering conglomerate using our AI infrastructure solutions" width={100} height={100} />
                 </div>
               </div>
               <div className="text-center">
-                <div className="h-24 w-24  object-center cursor-pointer rounded-full hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                  <Image src="/Jsw.png" alt="Jsw" width={200} height={200} className='object-cover h-full' />
+                <div className="h-24 w-24 object-center cursor-pointer rounded-full hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                  <Image src="/Jsw.png" alt="JSW - Manufacturing leader implementing our AI vision systems" width={200} height={200} className='object-cover h-full' />
                 </div>
               </div>
               <div className="text-center">
-                <div className="h-28  w-28 rounded-full  cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
-                  <Image src="/sch2.png" alt="Schindler" width={500} height={400} className='object-cover h-full' />
+                <div className="h-28 w-28 rounded-full cursor-pointer hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center mx-auto">
+                  <Image src="/sch2.png" alt="Schindler - Transportation innovator using our predictive maintenance AI" width={500} height={400} className='object-cover h-full' />
                 </div>
               </div>
             </div>
