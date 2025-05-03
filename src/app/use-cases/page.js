@@ -7,7 +7,9 @@ import UseCaseCard from '../../components/use-cases/UseCaseCard';
 import UseCaseHeader from '../../components/use-cases/UseCaseHeader';
 import UseCaseStats from '../../components/use-cases/UseCaseStats';
 import UseCaseCTA from '../../components/use-cases/UseCaseCTA';
+import ContactButton from '../../components/cta/ContactButton';
 import { useCases } from '../../data/useCases';
+import CTA from '@/components/cta/CTA';
 
 export default function UseCasesPage() {
   const [selectedIndustry, setSelectedIndustry] = useState('all');
@@ -91,6 +93,15 @@ export default function UseCasesPage() {
               </div>
             )}
           </div>
+            {/* <div className='flex justify-start mt-10'>
+              <ContactButton 
+              buttonText="Let's Talk" 
+              buttonClassName="px-8 py-3 bg-[#0f253c] text-white rounded-md font-medium transition-colors hover:bg-gray-100"
+              formTitle="Get in Touch"
+            />
+            </div> */}
+
+          <CTA/>
         </section>
         
         {/* Stats Section */}

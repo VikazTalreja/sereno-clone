@@ -17,7 +17,7 @@ const satoshi = Poppins({
 
 export const metadata = {
   title: "Sereno | Enterprise AI Solutions",
-  description: "We partner with India's largest organizations to design and deploy custom AI solutions that deliver results—fast.",
+  description: "We partner with India's largest organizations to design and deploy custom AI solutions that deliver results fast.",
 };
 
 export default function RootLayout({ children }) {

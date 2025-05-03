@@ -42,7 +42,7 @@ export default function BlogPostPage({ params }) {
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-[#f8f9fa] py-16">
+        <section className="bg-[#f8f9fa] pt-12">
           <div className="container mx-auto px-6 md:px-12">
             <div className="max-w-3xl mx-auto">
               <div className="flex items-center mb-6">
@@ -57,30 +57,12 @@ export default function BlogPostPage({ params }) {
                   Back to all posts
                 </Link>
               </div>
+          
               
-              <div className="inline-block bg-[#0f253c]/10 text-[#0f253c] px-3 py-1 rounded-full text-sm font-medium mb-4">
-                {post.category}
-              </div>
-              
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0f253c] mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0f253c]" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                 {post.title}
-              </h1>
-              
-              <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full bg-[#0f253c] text-white flex items-center justify-center mr-3">
-                  {post.author.charAt(0)}
-                </div>
-                <div className="mr-4">
-                  <p className="font-medium" style={{ fontFamily: 'Satoshi, sans-serif' }}>{post.author}</p>
-                  <p className="text-sm text-gray-500">{post.authorRole}</p>
-                </div>
-                <div className="text-gray-500 text-sm flex items-center">
-                  <span>{post.publishDate}</span>
-                  <span className="mx-2">•</span>
-                  <span>{post.readTime}</span>
-                </div>
-              </div>
-            </div>
+              </h1>   
+           </div>
           </div>
         </section>
         
@@ -129,18 +111,18 @@ export default function BlogPostPage({ params }) {
                     .slice(0, 2)
                     .map((relatedPost, index) => (
                       <Link href={`/blog/${relatedPost.slug}`} key={index}>
-                        <div className="border border-gray-100 rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow">
-                          <div className="inline-block bg-[#0f253c]/10 text-[#0f253c] px-2 py-1 rounded-full text-xs font-medium mb-3">
+                        <div className="border-l-4 border-[#0f253c] rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow">
+                          {/* <div className="inline-block bg-[#0f253c]/10 text-[#0f253c] px-2 py-1 rounded-full text-xs font-medium mb-3">
                             {relatedPost.category}
-                          </div>
+                          </div> */}
                           <h3 className="text-lg font-bold mb-2 text-[#0f253c]" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                             {relatedPost.title}
                           </h3>
-                          <div className="text-sm text-gray-500 flex items-center">
+                          {/* <div className="text-sm text-gray-500 flex items-center">
                             <span>{relatedPost.publishDate}</span>
                             <span className="mx-2">•</span>
                             <span>{relatedPost.readTime}</span>
-                          </div>
+                          </div> */}
                         </div>
                       </Link>
                     ))}

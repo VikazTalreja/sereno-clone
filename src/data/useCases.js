@@ -93,7 +93,7 @@ export const useCases = [
     title: "Realtime Safety Incident Escalation via Knowledge Graphs",
     industry: "Oil & Gas",
     department: "HSE (Health, Safety, Environment)",
-    challenge: "In large oil refineries and rigs, unstructured incident reports are often delayed, buried, or disconnected from historical near-miss records — increasing the likelihood of avoidable major incidents.",
+    challenge: "In large oil refineries and rigs, unstructured incident reports are often delayed, buried, or disconnected from historical near-miss records   increasing the likelihood of avoidable major incidents.",
     solution: "Sereno builds a real-time AI knowledge graph system that connects incident reports, safety manuals, past root-cause analyses, and sensor data. Whenever a new report is submitted, AI automatically relates it to known critical patterns and escalates immediately.",
     technologiesUsed: [
       "Temporal Knowledge Graphs",

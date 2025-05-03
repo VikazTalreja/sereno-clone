@@ -33,20 +33,16 @@ const Blog = () => {
                   {/* <div className="inline-block bg-[#0f253c]/10 text-[#0f253c] px-2 py-1 rounded-full text-xs font-medium mb-2">
                     {post.category}
                   </div> */}
-                   <div className="text-sm text-gray-500 flex items-center">
-                  <span>{post.publishDate}</span>
-                  <span className="mx-2">•</span>
-                  <span>{post.readTime || '3 min read'}</span>
-                </div>
+                  
                   <h3 className="text-lg font-semibold mb-1 text-[#0f253c]" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                     {post.title}
                   </h3>
                 </div>
-                <div className="text-sm md:flex hidden text-gray-500  items-center">
+                {/* <div className="text-sm md:flex hidden text-gray-500  items-center">
                   <span>{post.publishDate}</span>
                   <span className="mx-2">•</span>
                   <span>{post.readTime || '3 min read'}</span>
-                </div>
+                </div> */}
               </div>
               
               <div 

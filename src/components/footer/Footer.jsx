@@ -11,7 +11,7 @@ const Footer = () => {
               <span className="text-2xl font-bold text-black">sereno</span>
               <div className="h-1 w-10 bg-sereno-green mt-1"></div>
             </div>
-            <p className="mt-4 text-gray-600">Enterprise AI solutions that deliver results—fast.</p>
+            <p className="mt-4 text-gray-600">Enterprise AI solutions that deliver results fast.</p>
           </div>
           
           <div>

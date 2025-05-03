@@ -1,5 +1,6 @@
+"use client"
 import React from 'react';
-import Link from 'next/link';
+import ContactButton from './ContactButton';
 
 const CTA = () => {
   return (
@@ -8,12 +9,11 @@ const CTA = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Interested in working together?</h2>
         <p className="text-lg mb-8">We'd love to hear from you.</p>
         <div>
-          <Link
-            href="/contact"
-            className="px-8 py-3 bg-white text-[#0f253c] rounded-md font-medium hover:bg-gray-100 transition-colors"
-          >
-            Get in Touch
-          </Link>
+          <ContactButton 
+            buttonText="Let's Talk" 
+            buttonClassName="px-8 py-3 bg-white text-[#0f253c] rounded-md font-medium transition-colors hover:bg-gray-100"
+            formTitle="Get in Touch"
+          />
         </div>
       </div>
     </section>

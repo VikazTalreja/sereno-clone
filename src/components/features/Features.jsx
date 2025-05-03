@@ -46,7 +46,7 @@ const Features = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold">We stay 6 months ahead of the curve—so you don't have to.</p>
+                  <p className="font-semibold">We stay 6 months ahead of the curve so you don't have to.</p>
                 </div>
               </li>
             </ul>

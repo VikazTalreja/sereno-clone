@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ContactButton from '../cta/ContactButton';
 const UseCaseHeader = () => {
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
@@ -31,7 +31,13 @@ const UseCaseHeader = () => {
               Discover how leading enterprises across industries are transforming their operations with Sereno's AI solutions
             </p>
           </div>
-          
+          <div className='flex justify-center'>
+          <ContactButton 
+            buttonText="Let's Talk" 
+            buttonClassName="px-8 py-3 bg-[#0f253c] text-white rounded-md font-medium transition-colors hover:bg-gray-100"
+            formTitle="Get in Touch"
+          />
+          </div>
           {/* <div className="relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-100">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex flex-col items-center text-center">

@@ -11,7 +11,23 @@ export default function BlogPage() {
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-[#f8f9fa] py-16 md:py-12">
+        
+
+        
+        <section className="bg-[#f8f9fa] relative py-16 md:py-12">
+        <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="absolute -left-40 -top-20 w-96 h-96 rounded-full bg-[#0f253c]/5"></div>
+        <div className="absolute right-0 top-1/2 w-64 h-64 rounded-full bg-[#0f253c]/5"></div>
+        <div className="absolute left-1/3 bottom-0 w-80 h-80 rounded-full bg-[#0f253c]/5"></div>
+        
+        {/* Animated dots grid */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="h-full w-full" style={{ 
+            backgroundImage: 'radial-gradient(#0f253c 1px, transparent 1px)',
+            backgroundSize: '30px 30px' 
+          }}></div>
+        </div>
+      </div>
           <div className="container mx-auto px-6 md:px-12">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-[#0f253c] mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
@@ -36,11 +52,7 @@ export default function BlogPage() {
                     </span>
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center text-sm text-gray-500 mb-2">
-                      <span>{post.publishDate}</span>
-                      <span className="mx-2">•</span>
-                      <span>{post.readTime}</span>
-                    </div>
+                   
                     <h3 className="text-xl font-bold mb-3 text-[#0f253c]" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                       {post.title}
                     </h3>
@@ -48,15 +60,7 @@ export default function BlogPage() {
                       {post.excerpt}
                     </p>
                     <div className="flex justify-between items-center">
-                      <div className="flex items-center">
-                        <div className="w-8 h-8 rounded-full bg-[#0f253c] text-white flex items-center justify-center mr-2">
-                          {post.author.charAt(0)}
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium" style={{ fontFamily: 'Satoshi, sans-serif' }}>{post.author}</p>
-                          <p className="text-xs text-gray-500">{post.authorRole}</p>
-                        </div>
-                      </div>
+                     
                       <Link href={`/blog/${post.slug}`} className="text-[#0f253c] hover:text-[#0f253c] font-medium text-sm" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                         Read more →
                       </Link>
