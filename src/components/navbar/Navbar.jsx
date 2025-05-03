@@ -86,13 +86,7 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="absolute top-16 left-0 right-0 bg-white shadow-md md:hidden z-50 py-4 px-6">
             <div className="flex flex-col space-y-4">
-              <Link 
-                href="/solutions" 
-                className="text-gray-700 hover:text-black transition-colors"
-                style={{ fontFamily: 'Satoshi, sans-serif', fontWeight: 500 }}
-              >
-                Solutions
-              </Link>
+            
               <Link 
                 href="/use-cases" 
                 className="text-gray-700 hover:text-black transition-colors"

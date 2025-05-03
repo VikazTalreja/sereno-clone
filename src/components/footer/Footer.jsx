@@ -1,7 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import { useCases } from '@/data/useCases';
 
 const Footer = () => {
+  const uniqueuseCases = [...new Set(useCases.map(useCase => useCase.industry))];
+  console.log(uniqueuseCases);
   return (
     <footer className="bg-gray-100 py-12 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
@@ -15,13 +18,13 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">Solutions</h3>
-            <ul className="space-y-2">
-              <li><Link href="/solutions/market-intelligence" className="text-gray-600 hover:text-black transition">Market Intelligence</Link></li>
-              <li><Link href="/solutions/salesforce" className="text-gray-600 hover:text-black transition">Salesforce AI</Link></li>
-              <li><Link href="/solutions/hr-recruitment" className="text-gray-600 hover:text-black transition">HR & Recruitment</Link></li>
-              <li><Link href="/solutions/engineering" className="text-gray-600 hover:text-black transition">Engineering</Link></li>
-            </ul>
+            <h3 className="font-bold text-lg mb-4">Use cases</h3>
+            {uniqueuseCases.map((useCase , index) => (
+              <ul className="space-y-2" key={index}>
+                <li><Link href={`/use-cases`} className="text-gray-600 hover:text-black transition">{useCase}</Link></li>
+              </ul>
+            ))}
+            
           </div>
           
           <div>

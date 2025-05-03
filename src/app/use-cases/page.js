@@ -1,5 +1,6 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
 import IndustryFilter from '../../components/use-cases/IndustryFilter';
@@ -12,8 +13,20 @@ import { useCases } from '../../data/useCases';
 import CTA from '@/components/cta/CTA';
 
 export default function UseCasesPage() {
+  const searchParams = useSearchParams();
   const [selectedIndustry, setSelectedIndustry] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [useCaseIdToOpen, setUseCaseIdToOpen] = useState(null);
+
+  // Check URL parameters on component mount
+  useEffect(() => {
+    const showModal = searchParams.get('showModal');
+    const useCaseId = searchParams.get('id');
+    
+    if (showModal === 'true' && useCaseId) {
+      setUseCaseIdToOpen(parseInt(useCaseId, 10));
+    }
+  }, [searchParams]);
 
   // Filter use cases based on selected industry and search query
   const filteredUseCases = useCases.filter(useCase => {
@@ -69,7 +82,11 @@ export default function UseCasesPage() {
             {filteredUseCases.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredUseCases.map(useCase => (
-                  <UseCaseCard key={useCase.id} useCase={useCase} />
+                  <UseCaseCard 
+                    key={useCase.id} 
+                    useCase={useCase} 
+                    autoOpenModal={useCaseIdToOpen === useCase.id}
+                  />
                 ))}
               </div>
             ) : (
@@ -93,6 +110,7 @@ export default function UseCasesPage() {
               </div>
             )}
           </div>
+            
             {/* <div className='flex justify-start mt-10'>
               <ContactButton 
               buttonText="Let's Talk" 

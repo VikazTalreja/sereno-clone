@@ -47,7 +47,7 @@ export const useCases = [
   {
     id: 3,
     title: "Dynamic Freight Pricing Intelligence for Export-Heavy Businesses",
-    industry: "Steel, Cement, Agri Export, Oil & Gas",
+    industry: "Steel",
     department: "Logistics & Sales",
     challenge: "Freight prices for containers and bulk change daily across ports. Sales teams lack visibility into optimal pricing windows and often make suboptimal pricing decisions due to outdated logistics inputs.",
     solution: "A dynamic pricing intelligence system that scrapes port prices, matches historical export margins, recommends shipping timing and pricing strategy, and integrates with customer negotiations.",
@@ -69,7 +69,7 @@ export const useCases = [
   {
     id: 4,
     title: "Procurement Contract Intelligence & Negotiation Aid",
-    industry: "Manufacturing / Construction / Energy",
+    industry: "Energy",
     department: "Procurement & Legal",
     challenge: "Enterprises deal with thousands of suppliers and multi-year contracts with non-standard formats. Analyzing terms, obligations, risk clauses, and optimizing negotiations is slow and error-prone.",
     solution: "A GenAI-powered contract intelligence platform that reads contracts, highlights risks, benchmarks pricing, recommends negotiation levers, and generates comparative summaries with prior deals.",
@@ -109,30 +109,3 @@ export const useCases = [
     deployment: "On-prem with optional mobile extension for field engineers.",
   }
 ];
-
-// Original data format maintained for reference
-// export const OriginaluseCases =[
-
-//     usecase : 1,
-//     "AI-Driven Leak and Ignition Detection in Refineries",
-// 	"Industry": "Oil & Gas",
-// 	"Department": "Health, Safety & Environment (HSE), Operations",
-// 	"Problem Statement":
-// "Refineries are high-risk environments where undetected hydrocarbon leaks and ignition sources can lead to catastrophic fires and explosions. Traditional detection systems often fail to identify all potential hazards, especially in complex structures or due to human error.",
-// 	"Solution Summary":
-// "Implement an AI-powered monitoring system that utilizes machine learning algorithms and computer vision to detect leaks, vapor clouds, ignition sources, and smoke in real-time. The system analyzes data from various sensors and cameras to identify anomalies and trigger immediate alerts, allowing for swift preventive actions.",
-// 	"Technologies Used": [
-// 	"Machine Learning for pattern recognition",
-// 	"Computer Vision for visual monitoring",
-// 	"Sensor data integration",
-// 	"Real-time alerting systems"
-//     ],
-// 	"Business Outcomes": [
-// 	"Enhanced safety by early detection of potential hazards",
-// 	"Reduction in downtime and associated costs",
-// 	"Compliance with safety regulations",
-// 	"Protection of human life and environmental resources"
-//     ],
-// 	"Deployment":
-// "The system can be deployed on-premises within the refinery's existing infrastructure, ensuring data privacy and low latency. It integrates with current safety protocols and can be customized to specific site requirements."
-// ]

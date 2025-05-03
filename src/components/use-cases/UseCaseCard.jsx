@@ -1,9 +1,16 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const UseCaseCard = ({ useCase }) => {
+const UseCaseCard = ({ useCase, autoOpenModal = false }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Effect to open modal automatically if autoOpenModal is true
+  useEffect(() => {
+    if (autoOpenModal) {
+      openModal();
+    }
+  }, [autoOpenModal]);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -134,21 +141,23 @@ const UseCaseCard = ({ useCase }) => {
               )}
               
               {/* Results */}
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold text-[#0f253c] mb-2">Results</h4>
-                <ul className="mt-2 space-y-3">
-                  {useCase.results.map((result, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="inline-flex items-center justify-center h-5 w-5 rounded-full text-white bg-[#0f253c] mr-3 flex-shrink-0 mt-0.5">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </span>
-                      <span className="text-gray-600">{result}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {useCase.results && useCase.results.length > 0 && (
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-[#0f253c] mb-2">Results</h4>
+                  <ul className="mt-2 space-y-2">
+                    {useCase.results.map((result, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="inline-flex items-center justify-center h-5 w-5 rounded-full text-white bg-[#0f253c] mr-3 flex-shrink-0 mt-0.5">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </span>
+                        <span className="text-gray-600">{result}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               
               {/* Deployment */}
               {useCase.deployment && (
