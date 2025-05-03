@@ -9,6 +9,11 @@ const Blog = () => {
   // Get only the first 3 posts for the homepage component
   const featuredPosts = blogPosts.slice(0, 3);
 
+  // Function to handle touch interactions
+  const handleTouch = (index) => {
+    setActivePost(activePost === index ? null : index);
+  };
+
   return (
     <section className="bg-white py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
@@ -21,17 +26,23 @@ const Blog = () => {
               className="border-l-4 border-[#0f253c] pl-4 py-4 relative overflow-hidden transition-all duration-300 ease-in-out bg-white rounded-lg shadow-sm hover:shadow-md"
               onMouseEnter={() => setActivePost(index)}
               onMouseLeave={() => setActivePost(null)}
+              onTouchStart={() => handleTouch(index)}
             >
               <div className="flex justify-between items-center">
                 <div>
-                  <div className="inline-block bg-[#0f253c]/10 text-[#0f253c] px-2 py-1 rounded-full text-xs font-medium mb-2">
+                  {/* <div className="inline-block bg-[#0f253c]/10 text-[#0f253c] px-2 py-1 rounded-full text-xs font-medium mb-2">
                     {post.category}
-                  </div>
+                  </div> */}
+                   <div className="text-sm text-gray-500 flex items-center">
+                  <span>{post.publishDate}</span>
+                  <span className="mx-2">•</span>
+                  <span>{post.readTime || '3 min read'}</span>
+                </div>
                   <h3 className="text-lg font-semibold mb-1 text-[#0f253c]" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                     {post.title}
                   </h3>
                 </div>
-                <div className="text-sm text-gray-500 flex items-center">
+                <div className="text-sm md:flex hidden text-gray-500  items-center">
                   <span>{post.publishDate}</span>
                   <span className="mx-2">•</span>
                   <span>{post.readTime || '3 min read'}</span>

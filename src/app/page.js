@@ -8,7 +8,7 @@ import Footer from '../components/footer/Footer';
 export default function Home() {
   return (
     <div className="flex flex-col  max-w-6xl mx-auto min-h-screen">
-      <Navbar />
+      <Navbar className='sticky top-0 z-50' />
       <main>
         <Hero />
         <Features />
