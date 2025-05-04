@@ -6,7 +6,7 @@ import { blogPosts } from '../../data/blogPosts';
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen max-w-7xl mx-auto flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-grow">

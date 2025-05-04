@@ -6,7 +6,7 @@ import { blogPosts } from '../../data/blogPosts';
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen max-w-7xl mx-auto flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-grow">
@@ -14,7 +14,7 @@ export default function BlogPage() {
         
 
         
-        <section className="bg-[#f8f9fa] relative py-16 md:py-12">
+        <section className="bg-[#f8f9fa] w-full relative py-16 md:py-12">
         <div className="absolute inset-0 overflow-hidden z-0">
         <div className="absolute -left-40 -top-20 w-96 h-96 rounded-full bg-[#0f253c]/5"></div>
         <div className="absolute right-0 top-1/2 w-64 h-64 rounded-full bg-[#0f253c]/5"></div>

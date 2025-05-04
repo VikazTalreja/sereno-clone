@@ -6,7 +6,7 @@ import { blogPosts } from '../../data/blogPosts';
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen max-w-7xl mx-auto flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-grow">
@@ -28,8 +28,8 @@ export default function BlogPage() {
           }}></div>
         </div>
       </div>
-          <div className="container mx-auto px-6 md:px-12">
-            <div className="max-w-3xl mx-auto text-center">
+          <div className="container  mx-auto px-6 md:px-12">
+            <div className="max-w-full mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-[#0f253c] mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                About Us
               </h1>
@@ -38,7 +38,7 @@ export default function BlogPage() {
           </div>
         </section>
 
-        <section className="bg-[#f8f9fa] relative py-16 md:py-12">
+        <section className="bg-[#f8f9fa] max-w-6xl mx-auto relative py-16 md:py-12">
             <div className="container mx-auto px-6 md:px-12">
                 <div className="max-w-4xl mx-auto">
                 <div className="text-gray-600 text-lg text-left">

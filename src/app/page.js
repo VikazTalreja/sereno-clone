@@ -15,7 +15,7 @@ export default function Home() {
         <Features />
         <CapabilitiesStack />
         <Blog />
-        <CTA />
+        <CTA /> 
       </main>
       <Footer />
     </div>

@@ -16,7 +16,7 @@ const Blog = () => {
 
   return (
     <section className="bg-white py-16 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto">
+      <div className="mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-[#0f253c]" style={{ fontFamily: 'Satoshi, sans-serif' }}>Blog Insights</h2>
         
         <div className="space-y-6">

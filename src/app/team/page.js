@@ -6,13 +6,11 @@ import { blogPosts } from '../../data/blogPosts';
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen max-w-7xl mx-auto flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-grow">
         {/* Hero Section */}
-        
-
         
         <section className="bg-[#f8f9fa] relative py-16 md:py-12">
         <div className="absolute inset-0 overflow-hidden z-0">
