@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${inter.variable} ${satoshi.variable} bg-white antialiased`}
+        className={`${inter.variable} ${satoshi.variable} bg-white overflow-x-hidden antialiased`}
       >
         {children}
       </body>
