@@ -27,7 +27,7 @@ export const metadata = {
     siteName: "Sereno",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "favicon.svg",
         width: 1200,
         height: 630,
         alt: "Sereno - Enterprise AI Solutions",
@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               "name": "Sereno",
               "url": "https://www.serenovolante.com",
-              "logo": "https://www.serenovolante.com/logo.png",
+              "logo": "/favicon.svg",
               "sameAs": [
                 "https://twitter.com/sereno_ai",
                 "https://www.linkedin.com/company/sereno-ai"
