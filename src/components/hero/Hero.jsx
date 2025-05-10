@@ -40,7 +40,7 @@ const Hero = () => {
               </div>
               <div className="text-center">
                 <div className="h-32 w-28 object-center cursor-pointer rounded-full hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                  <Image src="/Jsw.png" alt="JSW - Manufacturing leader implementing our AI vision systems" width={200} height={200} className='object-cover h-full' />
+                  <Image src="/Reliance.png" alt="JSW - Manufacturing leader implementing our AI vision systems" width={200} height={200} className='object-cover h-full' />
                 </div>
               </div>
               <div className="text-center">
@@ -67,7 +67,7 @@ const Hero = () => {
               </div>
               <div className="text-center">
                 <div className="h-24 w-24 object-center cursor-pointer rounded-full hover:grayscale-0 grayscale hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                  <Image src="/Jsw.png" alt="JSW - Manufacturing leader implementing our AI vision systems" width={200} height={200} className='object-cover h-full' />
+                  <Image src="/Reliance.png" alt="JSW - Manufacturing leader implementing our AI vision systems" width={200} height={200} className='object-cover h-full' />
                 </div>
               </div>
               <div className="text-center">
